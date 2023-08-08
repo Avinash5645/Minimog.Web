@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{01DE0B1C-539B-4AE6-AD8B-0A02BB780B78}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Minimog.Web</RootNamespace>
+    <AssemblyName>Minimog.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44302</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc5, Version=1.4.0.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc5.1.4.0\lib\net45\Unity.Mvc5.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Data\IProductDataFactory.cs" />
+    <Compile Include="Data\MinimogDbData.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MinimogDbData.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ProductDataFactory.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\JavaScriptHelper.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IProductRepository.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
+    <Compile Include="Service\IProductService.cs" />
+    <Compile Include="Service\ProductService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap.min.css" />
+    <Content Include="Assets\bootstrap-5.3.0\js\bootstrap.bundle.min.js" />
+    <Content Include="Assets\bootstrap-5.3.0\js\bootstrap.min.js" />
+    <Content Include="Assets\bootstrap-5.3.0\js\popper.min.js" />
+    <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\js\ctrList.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\cat_01.jpg" />
+    <Content Include="Images\cat_02.jpg" />
+    <Content Include="Images\cat_03.jpg" />
+    <Content Include="Images\cat_04.jpg" />
+    <Content Include="Images\cat_05.jpg" />
+    <Content Include="Images\dark-logo_1n.png" />
+    <Content Include="Images\default-skin.png" />
+    <Content Include="Images\download %285%29.png" />
+    <Content Include="Images\download.svg" />
+    <Content Include="Images\ezgif.com-gif-maker.jpg" />
+    <Content Include="Images\filter_brown.png" />
+    <Content Include="Images\filter_caro.png" />
+    <Content Include="Images\filter_caro_black.jpg" />
+    <Content Include="Images\filter_caro_green.jpg" />
+    <Content Include="Images\h1_slide_01.jpg" />
+    <Content Include="Images\icon_box_free_ship.png" />
+    <Content Include="Images\icon_box_money_guarantee.png" />
+    <Content Include="Images\icon_box_payment.png" />
+    <Content Include="Images\icon_box_support.png" />
+    <Content Include="Images\Listing_Pages\dark-logo_1n.png" />
+    <Content Include="Images\Listing_Pages\default-skin.png" />
+    <Content Include="Images\Listing_Pages\download %281%29.svg" />
+    <Content Include="Images\Listing_Pages\download %282%29.svg" />
+    <Content Include="Images\Listing_Pages\download %285%29.png" />
+    <Content Include="Images\Listing_Pages\download.svg" />
+    <Content Include="Images\Listing_Pages\filter_brown.png" />
+    <Content Include="Images\Listing_Pages\filter_caro.png" />
+    <Content Include="Images\Listing_Pages\filter_caro_black.jpg" />
+    <Content Include="Images\Listing_Pages\filter_caro_green.jpg" />
+    <Content Include="Images\Listing_Pages\icon-select.png" />
+    <Content Include="Images\Listing_Pages\loader-1.gif" />
+    <Content Include="Images\Listing_Pages\payment %281%29.png" />
+    <Content Include="Images\Listing_Pages\product_fashion_02_b_1_1.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_02_b_2_1.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_04_2.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_12_b_1_1.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_12_b_3.jpg" />
+    <Content Include="Images\Listing_Pages\product_fashion_14_a_1.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_14_a_2.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_15_a_1.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_15_a_4.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_17_b_1.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_17_b_2.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_19_a_1.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_19_a_2.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_19_a_3.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_22_a_1.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_22_a_2.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_25_a_1_2.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_25_a_3_2.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_34_a_1.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_34_a_2.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_35_b_1_1.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_35_b_2_1.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_36_c_1_1.jpeg" />
+    <Content Include="Images\Listing_Pages\product_fashion_36_c_3_1.jpeg" />
+    <Content Include="Images\Listing_Pages\promo-popup-image.jpeg" />
+    <Content Include="Images\Listing_Pages\select-arrow.svg" />
+    <Content Include="Images\Listing_Pages\shop_megamenu_01.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\dark-logo_1n %281%29.png" />
+    <Content Include="Images\Long-sleeve Maxi Dress\dark-logo_1n.png" />
+    <Content Include="Images\Long-sleeve Maxi Dress\default-skin.png" />
+    <Content Include="Images\Long-sleeve Maxi Dress\download.svg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\how-to-measure-women.png" />
+    <Content Include="Images\Long-sleeve Maxi Dress\icon-select.png" />
+    <Content Include="Images\Long-sleeve Maxi Dress\icon_box_free_ship.png" />
+    <Content Include="Images\Long-sleeve Maxi Dress\icon_box_money_guarantee.png" />
+    <Content Include="Images\Long-sleeve Maxi Dress\icon_box_payment.png" />
+    <Content Include="Images\Long-sleeve Maxi Dress\icon_box_support.png" />
+    <Content Include="Images\Long-sleeve Maxi Dress\payment.png" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product-trust-badge.png" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_12_b_1_1.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_12_b_3.jpg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_13_b_1.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_13_b_2.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_15_a_1.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_15_a_4.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_17_b_1.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_17_b_2.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_a_1 %281%29.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_a_1 %282%29.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_a_1.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_a_2 %281%29.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_a_2.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_a_3 %281%29.jpg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_a_3 %282%29.jpg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_a_3.jpg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_a_4 %281%29.jpg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_a_4.jpg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_b_1 %281%29.jpg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_b_1.jpg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_b_2 %281%29.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_b_2.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_b_3 %281%29.jpg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_19_b_3.jpg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_22_a_1.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_22_a_2.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_25_a_1_2.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_25_a_3_2.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_36_c_1_1.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_36_c_3_1.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\product_fashion_39_a_1.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\promo-popup-image.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\select-arrow.svg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\shop_megamenu_01.jpeg" />
+    <Content Include="Images\Long-sleeve Maxi Dress\washing-instruction.png" />
+    <Content Include="Images\payment %281%29.png" />
+    <Content Include="Images\product_fashion_02_b_1_1.jpeg" />
+    <Content Include="Images\product_fashion_02_b_2_1.jpeg" />
+    <Content Include="Images\product_fashion_03_1.jpg" />
+    <Content Include="Images\product_fashion_03_3.jpg" />
+    <Content Include="Images\product_fashion_04_2.jpeg" />
+    <Content Include="Images\product_fashion_12_b_1_1 %281%29.jpeg" />
+    <Content Include="Images\product_fashion_12_b_1_1.jpeg" />
+    <Content Include="Images\product_fashion_12_b_3.jpg" />
+    <Content Include="Images\product_fashion_13_b_1.jpeg" />
+    <Content Include="Images\product_fashion_13_b_2.jpeg" />
+    <Content Include="Images\product_fashion_14_a_1.jpeg" />
+    <Content Include="Images\product_fashion_14_a_2.jpeg" />
+    <Content Include="Images\product_fashion_15_a_1.jpeg" />
+    <Content Include="Images\product_fashion_15_a_4.jpeg" />
+    <Content Include="Images\product_fashion_16_a_1.jpeg" />
+    <Content Include="Images\product_fashion_16_a_4.jpeg" />
+    <Content Include="Images\product_fashion_17_b_1.jpeg" />
+    <Content Include="Images\product_fashion_17_b_2.jpeg" />
+    <Content Include="Images\product_fashion_19_a_1.jpeg" />
+    <Content Include="Images\product_fashion_19_a_2.jpeg" />
+    <Content Include="Images\product_fashion_19_a_3.jpeg" />
+    <Content Include="Images\product_fashion_22_a_1.jpeg" />
+    <Content Include="Images\product_fashion_22_a_2.jpeg" />
+    <Content Include="Images\product_fashion_23_a_1.jpg" />
+    <Content Include="Images\product_fashion_23_a_3.jpg" />
+    <Content Include="Images\product_fashion_25_a_1_2.jpeg" />
+    <Content Include="Images\product_fashion_25_a_3_2.jpeg" />
+    <Content Include="Images\product_fashion_30_b_1.jpeg" />
+    <Content Include="Images\product_fashion_30_b_2.jpeg" />
+    <Content Include="Images\product_fashion_34_a_1.jpeg" />
+    <Content Include="Images\product_fashion_34_a_2.jpeg" />
+    <Content Include="Images\product_fashion_35_b_1_1.jpeg" />
+    <Content Include="Images\product_fashion_35_b_2_1.jpeg" />
+    <Content Include="Images\product_fashion_36_a_1.jpeg" />
+    <Content Include="Images\product_fashion_36_a_2.jpeg" />
+    <Content Include="Images\product_fashion_36_c_1_1.jpeg" />
+    <Content Include="Images\product_fashion_36_c_3_1.jpeg" />
+    <Content Include="Images\product_fashion_38_c_1_1_.png" />
+    <Content Include="Images\product_fashion_38_c_4.jpeg" />
+    <Content Include="Images\product_fashion_39_a_1.jpeg" />
+    <Content Include="Images\product_fashion_39_a_2.jpeg" />
+    <Content Include="Images\promo-popup-image.jpeg" />
+    <Content Include="Images\select-arrow.svg" />
+    <Content Include="Images\shop_megamenu_01.jpeg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Data\MinimogDbData.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MinimogDbData.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Data\MinimogDbData.dbml.layout">
+      <DependentUpon>MinimogDbData.dbml</DependentUpon>
+    </None>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\Product\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59122</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44302/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

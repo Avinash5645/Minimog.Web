@@ -1,0 +1,41 @@
+﻿@using Minimog.Web.Models
+@using Minimog.Web.Helper
+@model List<Product>
+@{
+    ViewBag.Title = "List";
+}
+
+<!-- Fourth Navbar Start -->
+<div class="text-center m-3">
+    <h2>Shop</h2>
+    <div class="d-flex justify-content-center">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Library</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Fourth Navbar End -->
+<main class="container" ng-controller="ctrList">
+    <div class="d-flex justify-content-between align-items-center">
+        <button type="button" class="btn btn-light">Filter</button>
+        <span>Items 1-12 of 30</span>
+        <span>
+            Position
+        </span>
+    </div>
+    <div class="row" ng-init='initList(@Html.Json(Model))'>
+        <div class="col-3 p-1 text-center" ng-repeat="pro in product">
+            <a href="~/Product/Detail/{{pro.id}}">
+                <img src="~/Images/{{pro.imageUrl}}" class="img-fluid">
+            </a>
+            <p><b ng-bind="pro.title"></b></p>
+            <p><b ng-bind="'$'+pro.price"></b></p>
+            <button class="circular-color-button bg-black"></button>
+            <button class="circular-color-button bg-danger"></button>
+        </div>
+    </div>
+    <!-- Fifth Image Section Start -->
+</main>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SgMinimog" Class="MinimogDbDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-DH5RI22C\SQLEXPRESS;Initial Catalog=SgMinimog;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SgMinimogConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.procGetProductDataAsJsonResult_20230806" Method="procGetProductDataAsJsonResult_20230806">
+    <ElementType Name="procGetProductDataAsJsonResult_20230806Result">
+      <Column Name="JsonResult" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.procGetProductByIdAsJson_20230806" Method="procGetProductByIdAsJson_20230806">
+    <Parameter Name="ProductId" Parameter="productId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="procGetProductByIdAsJson_20230806Result">
+      <Column Name="JsonResult" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
