@@ -19,7 +19,9 @@ namespace Minimog.Web
             // e.g. container.RegisterType<ITestService, TestService>();
             container.RegisterType<IProductDataFactory, ProductDataFactory>();
             container.RegisterType<IProductRepository, ProductRepository>();
+            container.RegisterType<IUserRepository, UserRepository>();
             container.RegisterType<IProductService, ProductService>();
+            container.RegisterType<IUserService, UserService>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

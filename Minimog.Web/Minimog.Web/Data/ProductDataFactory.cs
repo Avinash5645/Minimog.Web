@@ -13,7 +13,7 @@ namespace Minimog.Web.Data
         string _connectionString;
         public MinimogDbDataDataContext MinimogDbDataDataContext()
         {
-            _connectionString = ConfigurationManager.ConnectionStrings["SgMinimogConnectionString"].ConnectionString;
+            _connectionString = ConfigurationManager.ConnectionStrings["MinimogConnectionString"].ConnectionString;
             return new MinimogDbDataDataContext(_connectionString, _sharedMappingSource);
         }
     }

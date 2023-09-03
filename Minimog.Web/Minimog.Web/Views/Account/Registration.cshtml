@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+}
+@*<div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Signup Form
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                            <a href="~/Account/Login">SingUp</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+<div class="container mt-5" ng-controller="SignupController as signupCtrl">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Signup Form
+                </div>
+                <div class="card-body">
+                    <form name="signupForm" ng-submit="signupCtrl.submitForm()" novalidate>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" ng-model="signupCtrl.username" required>
+                            <div ng-show="signupForm.username.$dirty && signupForm.username.$error.required" class="text-danger">
+                                Username is required.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email" ng-model="signupCtrl.email" required>
+                            <div ng-show="signupForm.email.$dirty && signupForm.email.$error.required" class="text-danger">
+                                Email is required.
+                            </div>
+                            <div ng-show="signupForm.email.$dirty && signupForm.email.$error.email" class="text-danger">
+                                Invalid email format.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" ng-model="signupCtrl.password" required>
+                            <div ng-show="signupForm.password.$dirty && signupForm.password.$error.required" class="text-danger">
+                                Password is required.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" ng-model="signupCtrl.confirmPassword" required>
+                            <div ng-show="signupForm.confirmPassword.$dirty && signupForm.confirmPassword.$error.required" class="text-danger">
+                                Confirm Password is required.
+                            </div>
+                            <div ng-show="signupForm.confirmPassword.$dirty && signupCtrl.confirmPassword !== signupCtrl.password" class="text-danger">
+                                Passwords do not match.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" ng-disabled="signupForm.$invalid">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
