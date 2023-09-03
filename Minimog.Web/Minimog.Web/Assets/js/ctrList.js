@@ -41,4 +41,47 @@
          $scope.product = model;
          console.log("list");
      }
- }]);
+ }]).controller('loginController', function ($scope) {
+     $scope.user = {};
+
+     $scope.login = function () {
+         // Perform login logic here
+         console.log('Logging in:', $scope.user.username, $scope.user.password);
+     };
+ }).controller('SignupController', function ($scope, $http) {
+     var vm = this;
+
+     vm.users = [];
+     console.log(vm.users);
+     vm.submitForm = function () {
+         if ($scope.signupForm.$valid) {
+             var userData = {
+                 username: vm.username,
+                 email: vm.email,
+                 password: vm.password
+             }
+
+             vm.users.push(userData);
+             console.log('UserData:', userData);
+             // Send user data to backend
+             $http.post('/Account/RegistrationData', userData)
+                 .then(function (response) {
+                     if (response.data.IsValid) {
+                         console.log('Registration successful:', response.data);
+                         alert(response.data.Message);
+                     }
+                     else {
+                         alert(response.data.Message);
+}
+                     // Clear form fields after successful registration
+                     //vm.username = '';
+                     //vm.email = '';
+                     //vm.password = '';
+                 })
+                 .catch(function (error) {
+                     console.error('Registration error:', error);
+                 });
+         }
+         
+     };
+ });

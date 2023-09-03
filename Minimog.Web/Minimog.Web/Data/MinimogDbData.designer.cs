@@ -33,7 +33,7 @@ namespace Minimog.Web.Data
     #endregion
 		
 		public MinimogDbDataDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["SgMinimogConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["MinimogConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -74,6 +74,13 @@ namespace Minimog.Web.Data
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), productId);
 			return ((ISingleResult<procGetProductByIdAsJson_20230806Result>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.procSaveUser")]
+		public ISingleResult<procSaveUserResult> procSaveUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="NVarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="NVarChar(100)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="NVarChar(50)")] string password)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, email, password);
+			return ((ISingleResult<procSaveUserResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -124,6 +131,50 @@ namespace Minimog.Web.Data
 				if ((this._JsonResult != value))
 				{
 					this._JsonResult = value;
+				}
+			}
+		}
+	}
+	
+	public partial class procSaveUserResult
+	{
+		
+		private System.Nullable<bool> _IsValid;
+		
+		private string _Message;
+		
+		public procSaveUserResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsValid", DbType="Bit")]
+		public System.Nullable<bool> IsValid
+		{
+			get
+			{
+				return this._IsValid;
+			}
+			set
+			{
+				if ((this._IsValid != value))
+				{
+					this._IsValid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Message", DbType="NVarChar(50)")]
+		public string Message
+		{
+			get
+			{
+				return this._Message;
+			}
+			set
+			{
+				if ((this._Message != value))
+				{
+					this._Message = value;
 				}
 			}
 		}

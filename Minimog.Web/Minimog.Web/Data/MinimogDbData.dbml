@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SgMinimog" Class="MinimogDbDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-DH5RI22C\SQLEXPRESS;Initial Catalog=SgMinimog;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SgMinimogConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=Manish\MSSQLSERVER2022;Initial Catalog=Minimog;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MinimogConnectionString" Provider="System.Data.SqlClient" />
   <Function Name="dbo.procGetProductDataAsJsonResult_20230806" Method="procGetProductDataAsJsonResult_20230806">
     <ElementType Name="procGetProductDataAsJsonResult_20230806Result">
       <Column Name="JsonResult" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
@@ -9,6 +9,15 @@
     <Parameter Name="ProductId" Parameter="productId" Type="System.Guid" DbType="UniqueIdentifier" />
     <ElementType Name="procGetProductByIdAsJson_20230806Result">
       <Column Name="JsonResult" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.procSaveUser" Method="procSaveUser">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="procSaveUserResult">
+      <Column Name="IsValid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
