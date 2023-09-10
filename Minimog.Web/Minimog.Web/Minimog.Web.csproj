@@ -173,6 +173,10 @@
     <Content Include="Assets\bootstrap-5.3.0\js\bootstrap.min.js" />
     <Content Include="Assets\bootstrap-5.3.0\js\popper.min.js" />
     <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\dist\css\iziToast.css" />
+    <Content Include="Assets\dist\css\iziToast.min.css" />
+    <Content Include="Assets\dist\js\iziToast.js" />
+    <Content Include="Assets\dist\js\iziToast.min.js" />
     <Content Include="Assets\js\ctrList.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

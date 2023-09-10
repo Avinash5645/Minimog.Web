@@ -19,5 +19,10 @@ namespace Minimog.Web.Service
             var res = _userRepository.SaveUser(user);
             return res;
         }
+        public BoolRespose LoginCheck(User user)  
+        {
+            var res = _userRepository.LoginCheck(user);
+            return res;
+        }
     }
 }

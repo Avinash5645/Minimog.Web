@@ -22,7 +22,7 @@ namespace Minimog.Web.Data
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SgMinimog")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Minimog")]
 	public partial class MinimogDbDataDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -81,6 +81,13 @@ namespace Minimog.Web.Data
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, email, password);
 			return ((ISingleResult<procSaveUserResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.procLoginCheck")]
+		public ISingleResult<procLoginCheckResult> procLoginCheck([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="NVarChar(60)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(10)")] string password)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), email, password);
+			return ((ISingleResult<procLoginCheckResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -164,6 +171,50 @@ namespace Minimog.Web.Data
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Message", DbType="NVarChar(50)")]
+		public string Message
+		{
+			get
+			{
+				return this._Message;
+			}
+			set
+			{
+				if ((this._Message != value))
+				{
+					this._Message = value;
+				}
+			}
+		}
+	}
+	
+	public partial class procLoginCheckResult
+	{
+		
+		private System.Nullable<bool> _IsValid;
+		
+		private string _Message;
+		
+		public procLoginCheckResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsValid", DbType="Bit")]
+		public System.Nullable<bool> IsValid
+		{
+			get
+			{
+				return this._IsValid;
+			}
+			set
+			{
+				if ((this._IsValid != value))
+				{
+					this._IsValid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Message", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
 		public string Message
 		{
 			get

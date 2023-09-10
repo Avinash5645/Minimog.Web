@@ -28,6 +28,18 @@ namespace Minimog.Web.Repository
                 response.Message = result.Message;
             }
             return response;
+        } 
+        public BoolRespose LoginCheck(User User)
+        {
+            var response= new BoolRespose();
+            var results = _minimogDbDataDataContext.procLoginCheck(User.Email, User.Password);
+            var result = results.SingleOrDefault();
+            if (result != null)
+            {
+                response.IsValid = result.IsValid.GetValueOrDefault();
+                response.Message = result.Message;
+            }
+            return response;
         }
     }
 }

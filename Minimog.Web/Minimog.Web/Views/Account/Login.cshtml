@@ -14,9 +14,9 @@
                     <div class="card-body">
                         <form name="loginForm" ng-submit="login()" novalidate>
                             <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" ng-model="user.username" required>
-                                <div ng-show="loginForm.username.$dirty && loginForm.username.$error.required" class="text-danger">Username is required.</div>
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" ng-model="user.email" required>
+                                <div ng-show="loginForm.username.$dirty && loginForm.username.$error.required" class="text-danger">Email is required.</div>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>

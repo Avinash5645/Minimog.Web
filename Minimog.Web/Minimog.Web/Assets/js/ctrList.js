@@ -41,12 +41,41 @@
          $scope.product = model;
          console.log("list");
      }
- }]).controller('loginController', function ($scope) {
+ }]).controller('loginController', function ($scope, $http) {
      $scope.user = {};
 
      $scope.login = function () {
          // Perform login logic here
-         console.log('Logging in:', $scope.user.username, $scope.user.password);
+         console.log('Logging in:', $scope.user.email, $scope.user.password);
+         $http.post('/Account/LoginCheck', $scope.user)
+             .then(function (response) {
+                 if (response.data.IsValid) {
+                     console.log('Registration successful:', response.data);
+                     alert(response.data.Message);
+                     iziToast.info({
+                         title: 'Hello',
+                         message: 'Welcome!',
+                     });
+                     //  window.location.href = '@Url.Content("~/{Account}/{Login}")';
+                     window.location.href = '/Account/Login'; // Modify the URL as needed
+                 }
+                 else {
+                     //alert(response.data.Message);
+                     iziToast.error({
+                         title: 'Error',
+                         message: response.data.Message,
+                         position:'topRight',
+                     });
+                 }
+                 // Clear form fields after successful registration
+                 //vm.username = '';
+                 //vm.email = '';
+                 //vm.password = '';
+             })
+             .catch(function (error) {
+                 console.error('Registration error:', error);
+             });
+     
      };
  }).controller('SignupController', function ($scope, $http) {
      var vm = this;
@@ -69,6 +98,8 @@
                      if (response.data.IsValid) {
                          console.log('Registration successful:', response.data);
                          alert(response.data.Message);
+                      //  window.location.href = '@Url.Content("~/{Account}/{Login}")';
+                         window.location.href = '/Account/Login'; // Modify the URL as needed
                      }
                      else {
                          alert(response.data.Message);
