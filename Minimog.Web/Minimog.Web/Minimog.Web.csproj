@@ -183,6 +183,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="DBScripts\CreateUserTable_2023.sql" />
+    <Content Include="DBScripts\ProcLoginCheck.sql" />
     <Content Include="DBScripts\procSaveUser.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
