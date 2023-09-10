@@ -10,5 +10,6 @@ namespace Minimog.Web.Repository
     public interface IUserRepository
     {
         BoolRespose SaveUser(User user);
+        BoolRespose LoginCheck(User user);
     }
 }

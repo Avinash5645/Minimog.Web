@@ -20,6 +20,12 @@ namespace Minimog.Web.Controllers
         {
             return View();
         }
+
+        public JsonResult LoginCheck(User user)
+        {
+            var response = _userService.LoginCheck(user);
+            return Json(response, JsonRequestBehavior.AllowGet);
+        }
         /// <summary>
         /// registration
         /// </summary>

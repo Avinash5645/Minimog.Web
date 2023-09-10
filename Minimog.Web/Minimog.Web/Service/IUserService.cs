@@ -9,6 +9,7 @@ namespace Minimog.Web.Service
 {
     public interface IUserService
     {
-        BoolRespose SaveUser(User user);    
+        BoolRespose SaveUser(User user);
+        BoolRespose LoginCheck(User user);    
     }
 }

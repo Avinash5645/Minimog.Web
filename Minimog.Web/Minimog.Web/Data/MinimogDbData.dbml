@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SgMinimog" Class="MinimogDbDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Minimog" Class="MinimogDbDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=Manish\MSSQLSERVER2022;Initial Catalog=Minimog;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MinimogConnectionString" Provider="System.Data.SqlClient" />
   <Function Name="dbo.procGetProductDataAsJsonResult_20230806" Method="procGetProductDataAsJsonResult_20230806">
     <ElementType Name="procGetProductDataAsJsonResult_20230806Result">
@@ -18,6 +18,14 @@
     <ElementType Name="procSaveUserResult">
       <Column Name="IsValid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="Message" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.procLoginCheck" Method="procLoginCheck">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(60)" />
+    <Parameter Name="password" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="procLoginCheckResult">
+      <Column Name="IsValid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>
