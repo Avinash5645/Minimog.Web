@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Minimog" Class="MinimogDbDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=Manish\MSSQLSERVER2022;Initial Catalog=Minimog;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MinimogConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=192.168.1.45,1433;Initial Catalog=SgMinimog;User ID=manish.gupta" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SgMinimogConnectionString" Provider="System.Data.SqlClient" />
   <Function Name="dbo.procGetProductDataAsJsonResult_20230806" Method="procGetProductDataAsJsonResult_20230806">
     <ElementType Name="procGetProductDataAsJsonResult_20230806Result">
       <Column Name="JsonResult" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />

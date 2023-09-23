@@ -33,7 +33,7 @@ namespace Minimog.Web.Data
     #endregion
 		
 		public MinimogDbDataDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["MinimogConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["SgMinimogConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
