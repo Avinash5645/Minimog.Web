@@ -20,7 +20,9 @@
 <!-- Fourth Navbar End -->
 <main class="container" ng-controller="ctrList">
     <div class="d-flex justify-content-between align-items-center">
-        <button type="button" class="btn btn-light">Filter</button>
+        <button type="button" class="btn btn-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <i class="fa-solid fa-filter"></i> Filters
+        </button>
         <span>Items 1-12 of 30</span>
         <span>
             Position
@@ -37,5 +39,360 @@
             <button class="circular-color-button bg-danger"></button>
         </div>
     </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Price
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+
+                           
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne">
+                            Category
+                        </button>
+                    </h2>
+                    <div id="collapseOne1" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Default checkbox
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Checked checkbox
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne">
+                            Color
+                        </button>
+                    </h2>
+                    <div id="collapseOne2" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="form-check">
+                                <input class="form-check-input bg-danger" type="checkbox" value="" id="flexCheckDefault">
+                                Red
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input bg-black" type="checkbox" value="" id="flexCheckDefault">
+                                Black
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input bg-primary" type="checkbox" value="" id="flexCheckDefault">
+                                Blue
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input bg-info" type="checkbox" value="" id="flexCheckDefault">
+                                Sky Blue
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Brand
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Puma
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Nike
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Nike
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Nike
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Size
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option3">
+                                <label class="form-check-label" for="inlineCheckbox1">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option4">
+                                <label class="form-check-label" for="inlineCheckbox2">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option5">
+                                <label class="form-check-label" for="inlineCheckbox1">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option6">
+                                <label class="form-check-label" for="inlineCheckbox2">6</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Fifth Image Section Start -->
+    <!-- Offcanvas Imports-->
+    <!-- Filters Offcanvas-->
+    <!--<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasFilters" aria-labelledby="offcanvasFiltersLabel">
+        <div class="offcanvas-header pb-0 d-flex align-items-center">
+            <h5 class="offcanvas-title" id="offcanvasFiltersLabel">Category Filters</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="d-flex flex-column justify-content-between w-100 h-100">-->
+    <!-- Filters-->
+    <!--<div>-->
+    <!-- Price Filter -->
+    <!--<div class="py-4 widget-filter widget-filter-price border-top">
+        <a class="small text-body text-decoration-none text-secondary-hover transition-all transition-all fs-6 fw-bolder d-block collapse-icon-chevron"
+           data-bs-toggle="collapse" href="#filter-modal-price" role="button" aria-expanded="true"
+           aria-controls="filter-modal-price">
+            Price
+        </a>
+        <div id="filter-modal-price" class="collapse show">
+            <div class="filter-price mt-6"></div>
+            <div class="d-flex justify-content-between align-items-center mt-7">
+                <div class="input-group mb-0 me-2 border">
+                    <span class="input-group-text bg-transparent fs-7 p-2 text-muted border-0">$</span>
+                    <input type="number" min="00" max="1000" step="1" class="filter-min form-control-sm border flex-grow-1 text-muted border-0">
+                </div>
+                <div class="input-group mb-0 ms-2 border">
+                    <span class="input-group-text bg-transparent fs-7 p-2 text-muted border-0">$</span>
+                    <input type="number" min="00" max="1000" step="1" class="filter-max form-control-sm flex-grow-1 text-muted border-0">
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- / Price Filter -->
+    <!-- Brands Filter -->
+    <!--<div class="py-4 widget-filter border-top">
+        <a class="small text-body text-decoration-none text-secondary-hover transition-all transition-all fs-6 fw-bolder d-block collapse-icon-chevron"
+           data-bs-toggle="collapse" href="#filter-modal-brands" role="button" aria-expanded="true"
+           aria-controls="filter-modal-brands">
+            Brands
+        </a>
+        <div id="filter-modal-brands" class="collapse show">
+            <div class="input-group my-3 py-1">
+                <input type="text" class="form-control py-2 filter-search rounded" placeholder="Search"
+                       aria-label="Search">
+                <span class="input-group-text bg-transparent p-2 position-absolute top-10 end-0 border-0 z-index-20">
+                    <i class="ri-search-2-line text-muted"></i>
+                </span>
+            </div>
+            <div class="simplebar-wrapper">
+                <div class="filter-options" data-pixr-simplebar>
+                    <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-0">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                               for="filter-brands-modal-0">
+                            Adidas  <span class="text-muted ms-1 fs-9">(21)</span>
+                        </label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-1">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                               for="filter-brands-modal-1">
+                            Asics  <span class="text-muted ms-1 fs-9">(13)</span>
+                        </label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-2">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                               for="filter-brands-modal-2">
+                            Canterbury  <span class="text-muted ms-1 fs-9">(18)</span>
+                        </label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-3">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                               for="filter-brands-modal-3">
+                            Converse  <span class="text-muted ms-1 fs-9">(25)</span>
+                        </label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-4">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                               for="filter-brands-modal-4">
+                            Donnay  <span class="text-muted ms-1 fs-9">(11)</span>
+                        </label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-5">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                               for="filter-brands-modal-5">
+                            Nike  <span class="text-muted ms-1 fs-9">(19)</span>
+                        </label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-6">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                               for="filter-brands-modal-6">
+                            Millet  <span class="text-muted ms-1 fs-9">(24)</span>
+                        </label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-7">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                               for="filter-brands-modal-7">
+                            Puma  <span class="text-muted ms-1 fs-9">(11)</span>
+                        </label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-8">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                               for="filter-brands-modal-8">
+                            Reebok  <span class="text-muted ms-1 fs-9">(19)</span>
+                        </label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-9">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                               for="filter-brands-modal-9">
+                            Under Armour  <span class="text-muted ms-1 fs-9">(24)</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- / Brands Filter -->
+    <!-- Sizes Filter -->
+    <!--<div class="py-4 widget-filter border-top">
+        <a class="small text-body text-decoration-none text-secondary-hover transition-all transition-all fs-6 fw-bolder d-block collapse-icon-chevron"
+           data-bs-toggle="collapse" href="#filter-modal-sizes" role="button" aria-expanded="true"
+           aria-controls="filter-modal-sizes">
+            Sizes
+        </a>
+        <div id="filter-modal-sizes" class="collapse show">
+            <div class="filter-options mt-3">
+                <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                    <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-0">
+                    <label class="form-check-label fw-normal" for="filter-sizes-modal-0">6.5</label>
+                </div>              <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                    <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-1">
+                    <label class="form-check-label fw-normal" for="filter-sizes-modal-1">7</label>
+                </div>              <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                    <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-2">
+                    <label class="form-check-label fw-normal" for="filter-sizes-modal-2">7.5</label>
+                </div>              <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                    <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-3">
+                    <label class="form-check-label fw-normal" for="filter-sizes-modal-3">8</label>
+                </div>              <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                    <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-4">
+                    <label class="form-check-label fw-normal" for="filter-sizes-modal-4">8.5</label>
+                </div>              <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                    <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-5">
+                    <label class="form-check-label fw-normal" for="filter-sizes-modal-5">9</label>
+                </div>              <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                    <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-6">
+                    <label class="form-check-label fw-normal" for="filter-sizes-modal-6">9.5</label>
+                </div>              <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                    <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-7">
+                    <label class="form-check-label fw-normal" for="filter-sizes-modal-7">10</label>
+                </div>              <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                    <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-8">
+                    <label class="form-check-label fw-normal" for="filter-sizes-modal-8">10.5</label>
+                </div>              <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                    <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-9">
+                    <label class="form-check-label fw-normal" for="filter-sizes-modal-9">11</label>
+                </div>              <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                    <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-10">
+                    <label class="form-check-label fw-normal" for="filter-sizes-modal-10">11.5</label>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- / Sizes Filter -->
+    <!-- Colour Filter -->
+    <!--<div class="py-4 widget-filter border-top">
+        <a class="small text-body text-decoration-none text-secondary-hover transition-all transition-all fs-6 fw-bolder d-block collapse-icon-chevron"
+           data-bs-toggle="collapse" href="#filter-modal-colour" role="button" aria-expanded="true"
+           aria-controls="filter-modal-colour">
+            Colour
+        </a>
+        <div id="filter-modal-colour" class="collapse show">
+            <div class="filter-options mt-3">
+                <div class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-primary">
+                    <input type="checkbox" class="form-check-color-input" id="filter-colours-modal-0">
+                    <label class="form-check-label" for="filter-colours-modal-0"></label>
+                </div>              <div class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-success">
+                    <input type="checkbox" class="form-check-color-input" id="filter-colours-modal-1">
+                    <label class="form-check-label" for="filter-colours-modal-1"></label>
+                </div>              <div class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-danger">
+                    <input type="checkbox" class="form-check-color-input" id="filter-colours-modal-2">
+                    <label class="form-check-label" for="filter-colours-modal-2"></label>
+                </div>              <div class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-info">
+                    <input type="checkbox" class="form-check-color-input" id="filter-colours-modal-3">
+                    <label class="form-check-label" for="filter-colours-modal-3"></label>
+                </div>              <div class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-warning">
+                    <input type="checkbox" class="form-check-color-input" id="filter-colours-modal-4">
+                    <label class="form-check-label" for="filter-colours-modal-4"></label>
+                </div>              <div class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-dark">
+                    <input type="checkbox" class="form-check-color-input" id="filter-colours-modal-5">
+                    <label class="form-check-label" for="filter-colours-modal-5"></label>
+                </div>              <div class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-secondary">
+                    <input type="checkbox" class="form-check-color-input" id="filter-colours-modal-6">
+                    <label class="form-check-label" for="filter-colours-modal-6"></label>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- / Colour Filter -->
+    <!--</div>-->
+    <!-- / Filters-->
+    <!-- Filter Button-->
+    <!--<div class="border-top pt-3">
+        <a href="#" class="btn btn-dark mt-2 d-block hover-lift-sm hover-boxshadow" data-bs-dismiss="offcanvas" aria-label="Close">Done</a>
+    </div>-->
+    <!-- /Filter Button-->
+    <!--</div>
+        </div>
+    </div>-->
 </main>
