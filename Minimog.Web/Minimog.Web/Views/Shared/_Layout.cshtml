@@ -10,9 +10,10 @@
     <script src="~/Assets/js/ctrList.js"></script>
     <link href="~/Assets/css/style.css" rel="stylesheet">
     <script src="~/Assets/bootstrap-5.3.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
 
-   
+
     @*<link href="~/Assets/bootstrap-5.3.0/css/libs.bundle.css" rel="stylesheet" />*@
     @*<link href="~/Assets/bootstrap-5.3.0/css/theme.bundle.css" rel="stylesheet" />*@
     <link href="~/Assets/dist/css/iziToast.css" rel="stylesheet" />
@@ -106,18 +107,64 @@
         </div>
         <div class="col-2" ng-hide="loginData.isValid"></div>
         <div class="col-2" ng-show="loginData.isValid">
-            <span  ng-bind="'Hi! '+loginData.name">
 
-            </span>
-            <span > <a ng-click="logout()">LogOut</a> </span>
+
+
+            @*<div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-regular fa-user ms-4"></i>
+                    <span ng-bind="'Hi! '+loginData.name">
+
+                    </span>
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">My Profile</a></li>
+                    <li><a class="dropdown-item" href="#"> <p class="ms-3"><a ng-click="logout()">LogOut</a></p></a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </div>*@
+
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle"
+                       href="#"
+                       role="button" id="dropdownMenuLink"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        <i class="fa-regular fa-user ms-4"></i>
+                        <span ng-bind="'Hi! '+loginData.name">
+
+                        </span>
+                    </a>
+
+                <ul class="dropdown-menu"
+                    aria-labelledby="dropdownMenuLink">
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            My Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#" ng-click="logout()">
+                            LogOut
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            Something else here
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
 
         <div class="col-2 ">
 
-            <a href="~/Account/Login" ng-hide="loginData.isValid">
+            <a class="text-decoration-none text-black" href="~/Account/Login" ng-hide="loginData.isValid">
                 <i class="fa-regular fa-user ms-4"></i>
             </a>
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-magnifying-glass ms-4"></i>
             <i class="fa-regular fa-star ms-4 "></i>
             <i class="fa-solid fa-bucket ms-4 "></i>
         </div>
