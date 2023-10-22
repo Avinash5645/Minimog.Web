@@ -33,3 +33,26 @@
   0% { opacity: 1; }
   100% { opacity: 0; }
 }
+
+/*.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown {
+    margin-left: 40rem;
+    margin-right: 40rem;
+}
+
+.name {
+    text-align: center;
+    color: green;
+} 
+*/
+.dropdown:hover .dropdown-menu {
+    display: block;
+   
+}
+
+.dropdown-item:hover {
+    background-color:gray ;
+} 
