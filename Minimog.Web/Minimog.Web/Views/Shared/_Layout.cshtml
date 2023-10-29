@@ -103,7 +103,7 @@
         </div>
 
         <div class="col-4 text-center">
-            <img class="img-fluid " src="~/Images/dark-logo_1n.png">
+            <img class="img-fluid" src="~/Images/dark-logo_1n.png">  
         </div>
         <div class="col-2" ng-hide="loginData.isValid"></div>
         <div class="col-2" ng-show="loginData.isValid">
@@ -125,17 +125,16 @@
                 </ul>
             </div>*@
 
-                <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle"
-                       href="#"
-                       role="button" id="dropdownMenuLink"
-                       data-bs-toggle="dropdown"
-                       aria-expanded="false">
-                        <i class="fa-regular fa-user ms-4"></i>
-                        <span ng-bind="'Hi! '+loginData.name">
-
-                        </span>
-                    </a>
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle"
+                   href="#"
+                   role="button" id="dropdownMenuLink"
+                   data-bs-toggle="dropdown"
+                   aria-expanded="false">
+                    <i class="fa-regular fa-user ms-4"></i>
+                    <span ng-bind="loginData.name">
+                    </span>
+                </a>
 
                 <ul class="dropdown-menu"
                     aria-labelledby="dropdownMenuLink">
@@ -149,22 +148,16 @@
                             LogOut
                         </a>
                     </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            Something else here
-                        </a>
-                    </li>
                 </ul>
             </div>
-
         </div>
 
         <div class="col-2 ">
-
+            <i class="fa-solid fa-magnifying-glass ms-4"></i>
             <a class="text-decoration-none text-black" href="~/Account/Login" ng-hide="loginData.isValid">
                 <i class="fa-regular fa-user ms-4"></i>
             </a>
-            <i class="fa-solid fa-magnifying-glass ms-4"></i>
+
             <i class="fa-regular fa-star ms-4 "></i>
             <i class="fa-solid fa-bucket ms-4 "></i>
         </div>
