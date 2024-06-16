@@ -18,6 +18,20 @@
     </div>
 </div>
 <!-- Fourth Navbar End -->
+<!-- Search Section Start -->
+@using (Html.BeginForm("List", "Product", FormMethod.Get))
+{
+    <div class="collapse" id="searchSection">
+        <div class="card card-body mb-3">
+            <div class="input-group">
+                @Html.TextBox("search", null, new { @class = "form-control", placeholder = "Search..." })
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </div>
+        </div>
+    </div>
+}
+<!-- Search Section End -->
+
 <main class="container" ng-controller="ctrList">
     <div class="d-flex justify-content-between align-items-center">
         <button type="button" class="btn btn-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
@@ -28,6 +42,7 @@
             Position
         </span>
     </div>
+
     <div class="row" ng-init='initList(@Html.Json(Model))'>
         <div class="col-3 p-1 text-center" ng-repeat="pro in product">
             <a href="~/Product/Detail/{{pro.id}}">
@@ -40,7 +55,7 @@
         </div>
     </div>
 
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" data-bs-backdrop="false">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -56,7 +71,7 @@
                     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
 
-                           
+
 
                         </div>
                     </div>

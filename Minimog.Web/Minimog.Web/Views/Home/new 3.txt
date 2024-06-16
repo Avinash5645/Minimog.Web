@@ -1,0 +1,21 @@
+ {
+      field: "image",
+      headerName: "Image",
+      flex: 1,
+      minWidth: 30,
+      minHeight: 30,
+      sortable: false,
+      renderCell: (params) => {
+        return (
+          <img
+            src={params.row.image}
+            alt={params.row.name}
+            style={{ width: 50, height: 50, borderRadius: "50%" }}
+          />
+        );
+      },
+    },
+	
+	
+	
+	 image: item.images[0]?.url,

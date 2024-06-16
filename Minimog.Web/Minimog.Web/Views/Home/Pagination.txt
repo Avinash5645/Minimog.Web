@@ -1,0 +1,45 @@
+1.Install-Package PagedList.Mvc
+
+2.public ActionResult GetUsers(int? page)
+{
+    int pageNumber = (page ?? 1); // If no page number is specified, default to the first page
+    int pageSize = 10; // Number of items per page
+
+    // Retrieve the list of users from your repository
+    var users = userRepository.GetUsers();
+
+    // Paginate the list of users
+    var paginatedUsers = users.ToPagedList(pageNumber, pageSize);
+
+    return View(paginatedUsers);
+}
+
+3.@model PagedList.IPagedList<CurdwithMVC.Models.User>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "GetUsers";
+}
+
+<h2>GetUsers</h2>
+
+<p>
+    <a href="@Url.Action("NewUser")" class="btn btn-primary">Create New</a>
+</p>
+<table class="table table-striped">
+    <!-- Table header omitted for brevity -->
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <!-- Table row content omitted for brevity -->
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Pagination links -->
+<div class="text-center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("GetUsers", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+</div>

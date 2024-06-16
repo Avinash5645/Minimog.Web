@@ -22,7 +22,7 @@ namespace Minimog.Web.Data
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Minimog")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SgMinimog")]
 	public partial class MinimogDbDataDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -31,12 +31,6 @@ namespace Minimog.Web.Data
     #region Extensibility Method Definitions
     partial void OnCreated();
     #endregion
-		
-		public MinimogDbDataDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["SgMinimogConnectionString"].ConnectionString, mappingSource)
-		{
-			OnCreated();
-		}
 		
 		public MinimogDbDataDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -62,13 +56,6 @@ namespace Minimog.Web.Data
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.procGetProductDataAsJsonResult_20230806")]
-		public ISingleResult<procGetProductDataAsJsonResult_20230806Result> procGetProductDataAsJsonResult_20230806()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<procGetProductDataAsJsonResult_20230806Result>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.procGetProductByIdAsJson_20230806")]
 		public ISingleResult<procGetProductByIdAsJson_20230806Result> procGetProductByIdAsJson_20230806([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProductId", DbType="UniqueIdentifier")] System.Nullable<System.Guid> productId)
 		{
@@ -89,31 +76,19 @@ namespace Minimog.Web.Data
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), email, password);
 			return ((ISingleResult<procLoginCheckResult>)(result.ReturnValue));
 		}
-	}
-	
-	public partial class procGetProductDataAsJsonResult_20230806Result
-	{
 		
-		private string _JsonResult;
-		
-		public procGetProductDataAsJsonResult_20230806Result()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.procGetProductList_20240616")]
+		public ISingleResult<procGetProductList_20240616Result> procGetProductList_20240616([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Search", DbType="NVarChar(255)")] string search)
 		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), search);
+			return ((ISingleResult<procGetProductList_20240616Result>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JsonResult", DbType="NVarChar(MAX)")]
-		public string JsonResult
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.procGetProductDataAsJsonResult_20240616")]
+		public ISingleResult<procGetProductDataAsJsonResult_20240616Result> procGetProductDataAsJsonResult_20240616([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string name)
 		{
-			get
-			{
-				return this._JsonResult;
-			}
-			set
-			{
-				if ((this._JsonResult != value))
-				{
-					this._JsonResult = value;
-				}
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name);
+			return ((ISingleResult<procGetProductDataAsJsonResult_20240616Result>)(result.ReturnValue));
 		}
 	}
 	
@@ -226,6 +201,220 @@ namespace Minimog.Web.Data
 				if ((this._Message != value))
 				{
 					this._Message = value;
+				}
+			}
+		}
+	}
+	
+	public partial class procGetProductList_20240616Result
+	{
+		
+		private System.Guid _id;
+		
+		private string _name;
+		
+		private string _title;
+		
+		private string _colorname;
+		
+		private string _colorcode;
+		
+		private string _size;
+		
+		private string _description;
+		
+		private System.Nullable<decimal> _price;
+		
+		private string _ImageUrl;
+		
+		private string _ImageUrl1;
+		
+		public procGetProductList_20240616Result()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(255)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this._name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_title", DbType="NVarChar(255)")]
+		public string title
+		{
+			get
+			{
+				return this._title;
+			}
+			set
+			{
+				if ((this._title != value))
+				{
+					this._title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_colorname", DbType="NVarChar(100)")]
+		public string colorname
+		{
+			get
+			{
+				return this._colorname;
+			}
+			set
+			{
+				if ((this._colorname != value))
+				{
+					this._colorname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_colorcode", DbType="NVarChar(10)")]
+		public string colorcode
+		{
+			get
+			{
+				return this._colorcode;
+			}
+			set
+			{
+				if ((this._colorcode != value))
+				{
+					this._colorcode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_size", DbType="NVarChar(50)")]
+		public string size
+		{
+			get
+			{
+				return this._size;
+			}
+			set
+			{
+				if ((this._size != value))
+				{
+					this._size = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NVarChar(MAX)")]
+		public string description
+		{
+			get
+			{
+				return this._description;
+			}
+			set
+			{
+				if ((this._description != value))
+				{
+					this._description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> price
+		{
+			get
+			{
+				return this._price;
+			}
+			set
+			{
+				if ((this._price != value))
+				{
+					this._price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageUrl", DbType="NVarChar(255)")]
+		public string ImageUrl
+		{
+			get
+			{
+				return this._ImageUrl;
+			}
+			set
+			{
+				if ((this._ImageUrl != value))
+				{
+					this._ImageUrl = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageUrl1", DbType="NVarChar(255)")]
+		public string ImageUrl1
+		{
+			get
+			{
+				return this._ImageUrl1;
+			}
+			set
+			{
+				if ((this._ImageUrl1 != value))
+				{
+					this._ImageUrl1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class procGetProductDataAsJsonResult_20240616Result
+	{
+		
+		private string _JsonResult;
+		
+		public procGetProductDataAsJsonResult_20240616Result()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JsonResult", DbType="NVarChar(MAX)")]
+		public string JsonResult
+		{
+			get
+			{
+				return this._JsonResult;
+			}
+			set
+			{
+				if ((this._JsonResult != value))
+				{
+					this._JsonResult = value;
 				}
 			}
 		}

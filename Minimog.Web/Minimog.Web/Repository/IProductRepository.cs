@@ -9,7 +9,7 @@ namespace Minimog.Web.Repository
 {
     public interface IProductRepository
     {
-        List<Product> GetProducts();
+        List<Product> GetProducts(string search);
         Product GetProduct(Guid id);
-    }
+	}
 }

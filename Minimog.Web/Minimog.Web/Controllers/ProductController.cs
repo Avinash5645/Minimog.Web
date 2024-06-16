@@ -27,9 +27,9 @@ namespace Minimog.Web.Controllers
         {
             return View();
         }
-        public ActionResult List()
+        public ActionResult List(string search)
         {
-            HttpResponseMessage res = Client.GetAsync(url + "Product/GetAllProduct").Result;
+            HttpResponseMessage res = Client.GetAsync(url + string.Format("Product/GetAllProduct?search={0}",search)).Result;
             var prodData = res.Content.ReadAsStringAsync().Result;
             IEnumerable<Product> productJson = JsonConvert.DeserializeObject<List<Product>>(prodData);
             return View(productJson);
@@ -41,10 +41,12 @@ namespace Minimog.Web.Controllers
             HttpResponseMessage res = Client.GetAsync(url + "Product/GetProduct/"+id).Result;
             var prodData = res.Content.ReadAsStringAsync().Result;
             Product productJson = JsonConvert.DeserializeObject<Product>(prodData);
-            return View(productJson);
+			productJson.Quantity = 1;
+
+			return View(productJson);
             //var res = _productService.GetProduct(id);
             //return View(res);
            // return View();
         }
-    }
+	}
 }

@@ -9,7 +9,7 @@ namespace Product.Service.ProductService
 {
     public interface IProductService
     {
-        List<ProductEntity> GetProducts();
+        List<ProductEntity> GetProducts(string search);
         ProductEntity GetProduct(Guid id);
     }
 }

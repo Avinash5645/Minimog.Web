@@ -22,9 +22,9 @@ namespace Minimog.Web.Repository
         /// get all products
         /// </summary>
         /// <returns></returns>
-        public List<Product> GetProducts()
+        public List<Product> GetProducts(string search)
         {   var products = new List<Product>();
-            var resproducts = _minimogDbDataDataContext.procGetProductDataAsJsonResult_20230806();
+            var resproducts = _minimogDbDataDataContext.procGetProductDataAsJsonResult_20240616(search);
             var jsonResult = resproducts.FirstOrDefault();
             products = JsonConvert.DeserializeObject<List<Product>>(jsonResult?.JsonResult);
             return products;
@@ -42,5 +42,5 @@ namespace Minimog.Web.Repository
             products = JsonConvert.DeserializeObject<List<Product>>(jsonResult?.JsonResult);
             return products.FirstOrDefault();
         }
-    }
+	}
 }

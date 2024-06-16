@@ -12,7 +12,7 @@ namespace Product.Data.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.2.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -30,6 +30,28 @@ namespace Product.Data.Properties {
         public string SgMinimogConnectionString {
             get {
                 return ((string)(this["SgMinimogConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Manish\\MSSQLSERVER2022;Initial Catalog=Minimog;Integrated Security=Tr" +
+            "ue")]
+        public string MinimogConnectionString {
+            get {
+                return ((string)(this["MinimogConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MANISH\\MSSQLSERVER2023;Initial Catalog=SgMinimog;Integrated Security=" +
+            "True;Encrypt=False")]
+        public string SgMinimogConnectionString1 {
+            get {
+                return ((string)(this["SgMinimogConnectionString1"]));
             }
         }
     }

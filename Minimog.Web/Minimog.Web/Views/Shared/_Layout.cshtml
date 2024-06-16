@@ -10,7 +10,7 @@
     <script src="~/Assets/js/ctrList.js"></script>
     <link href="~/Assets/css/style.css" rel="stylesheet">
     <script src="~/Assets/bootstrap-5.3.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    @*<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>*@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
 
 
@@ -76,19 +76,19 @@
                 <div class="container-fluid">
                     <!-- <a class="navbar-brand" href="#">Demo</a> -->
                     <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button> -->
+                      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button> -->
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link active navbar-brand" aria-current="page" href="~/Product/Index">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active navbar-brand" aria-current="page" href="#">Shope</a>
+                                <a class="nav-link active navbar-brand" aria-current="page" href="#">Shop</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link navbar-brand" href="~/Product/List">Products</a>
+                                <a class="nav-link navbar-brand" onclick="removednone()" href="~/Product/List">Products</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link navbar-brand" href="#">Blog</a>
@@ -103,7 +103,7 @@
         </div>
 
         <div class="col-4 text-center">
-            <img class="img-fluid" src="~/Images/dark-logo_1n.png">  
+            <img class="img-fluid" src="~/Images/dark-logo_1n.png">
         </div>
         <div class="col-2" ng-hide="loginData.isValid"></div>
         <div class="col-2" ng-show="loginData.isValid">
@@ -111,19 +111,19 @@
 
 
             @*<div class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-regular fa-user ms-4"></i>
-                    <span ng-bind="'Hi! '+loginData.name">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-regular fa-user ms-4"></i>
+                        <span ng-bind="'Hi! '+loginData.name">
 
-                    </span>
-                </a>
+                        </span>
+                    </a>
 
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">My Profile</a></li>
-                    <li><a class="dropdown-item" href="#"> <p class="ms-3"><a ng-click="logout()">LogOut</a></p></a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </div>*@
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">My Profile</a></li>
+                        <li><a class="dropdown-item" href="#"> <p class="ms-3"><a ng-click="logout()">LogOut</a></p></a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>*@
 
             <div class="dropdown">
                 <a class="btn btn-secondary dropdown-toggle"
@@ -153,13 +153,15 @@
         </div>
 
         <div class="col-2 ">
-            <i class="fa-solid fa-magnifying-glass ms-4"></i>
+            <i id="productsearch" class="fa-solid fa-magnifying-glass ms-4 d-none" data-bs-toggle="collapse" data-bs-target="#searchSection" aria-expanded="false" aria-controls="searchSection" style="cursor: pointer;"></i>
             <a class="text-decoration-none text-black" href="~/Account/Login" ng-hide="loginData.isValid">
                 <i class="fa-regular fa-user ms-4"></i>
             </a>
 
             <i class="fa-regular fa-star ms-4 "></i>
-            <i class="fa-solid fa-bucket ms-4 "></i>
+            <i id="bucketIcon" class="fa-solid fa-bucket ms-4 position-relative" ng-click="callAddToCArt()">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" ng-bind="cartCount"></span>
+            </i>
         </div>
 
     </nav>
@@ -193,6 +195,38 @@
             <p class="ms-4">Pay with Multiple Credit Cards</p>
         </div>
     </div>
+
+    @* Offcanvas Section Start *@
+  
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" data-bs-backdrop="false">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Add To Cart</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body container-fluid">
+            <div class="product-info">
+                <div class="row mb-1" ng-repeat="item in cartItems">
+                    <div class="col-4">
+                        <img src="~/Images/{{item.image}}" alt="Product Image" class="img-fluid">
+                    </div>
+                    <div class="col-8">
+                        <h6>{{item.title}}</h6>
+                        <p>${{item.price}}</p>
+                        <div class="input-group">
+                            <button class="btn btn-outline-secondary" type="button" id="button-decrease" ng-click="decrementItem(item)" >-</button>
+                            <input type="text" class="form-control text-center" aria-label="Quantity" ng-model="item.quantity" ng-blur="enterQuantityItem(item)" ng-keypress="($event.which === 13) && enterQuantityItem(item)">
+                            <button class="btn btn-outline-secondary" type="button" id="button-increase" ng-click="incrementItem(item)">+</button>
+                        </div>
+                        <button type="button" class="btn btn-danger mt-2" ng-click="removeFromCart($index)">
+                            <i class="fa-solid fa-trash"></i> Remove
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @* Offcanvas Section End *@
+
     <!-- Footer Section Start -->
     <footer class="mt-5">
         <div class=" container-fluid row mt-5">
@@ -251,6 +285,21 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
+        //quantity inc/dec start
+        document.getElementById('button-decrease').addEventListener('click', function () {
+            let quantityInput = this.nextElementSibling;
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+
+        document.getElementById('button-increase').addEventListener('click', function () {
+            let quantityInput = this.previousElementSibling;
+            let currentValue = parseInt(quantityInput.value);
+            quantityInput.value = currentValue + 1;
+        });
+        //quantity inc/dec end
         $(window).scroll(function () {
             if ($(this).scrollTop() > 100) {
                 $('#dynamicNav').addClass('shadow p-3 mb-5 bg-body-tertiary');
@@ -270,11 +319,25 @@
             }, 1000); // Wait for the animation duration (1s) before hiding the banner
         });
 
+        function removednone() {
+            //  document.getElementById("productsearch").innerHTML = Date();
+            var element = document.getElementById("productsearch");
+            element.classList.remove("d-none");
+        }
 
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const bucketIcon = document.getElementById('bucketIcon');
+            bucketIcon.addEventListener('click', () => {
+                // Trigger the offcanvas
+                var offcanvasElement = new bootstrap.Offcanvas(document.getElementById('offcanvasRight'));
+                offcanvasElement.show();
+            });
+        });
 
     </script>
     @*<script src="~/Assets/bootstrap-5.3.0/js/vendor.bundle.js"></script>
-    <script src="~/Assets/bootstrap-5.3.0/js/theme.bundle.js"></script>*@
+        <script src="~/Assets/bootstrap-5.3.0/js/theme.bundle.js"></script>*@
 </body>
 </html>
 

@@ -17,5 +17,6 @@ namespace Minimog.Web.Models
         public string ImageUrl { get; set; }
         public decimal Price { get; set; }
         public string ImageUrl1 { get; set; }
-    }
+		public int Quantity { get; set; }
+	}
 }

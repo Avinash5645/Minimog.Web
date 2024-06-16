@@ -1,10 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Minimog" Class="MinimogDbDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=192.168.1.45,1433;Initial Catalog=SgMinimog;User ID=manish.gupta" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SgMinimogConnectionString" Provider="System.Data.SqlClient" />
-  <Function Name="dbo.procGetProductDataAsJsonResult_20230806" Method="procGetProductDataAsJsonResult_20230806">
-    <ElementType Name="procGetProductDataAsJsonResult_20230806Result">
-      <Column Name="JsonResult" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </ElementType>
-  </Function>
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SgMinimog" Class="MinimogDbDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Function Name="dbo.procGetProductByIdAsJson_20230806" Method="procGetProductByIdAsJson_20230806">
     <Parameter Name="ProductId" Parameter="productId" Type="System.Guid" DbType="UniqueIdentifier" />
     <ElementType Name="procGetProductByIdAsJson_20230806Result">
@@ -26,6 +20,27 @@
     <ElementType Name="procLoginCheckResult">
       <Column Name="IsValid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="Message" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.procGetProductList_20240616" Method="procGetProductList_20240616">
+    <Parameter Name="Search" Parameter="search" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="procGetProductList_20240616Result">
+      <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="colorname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="colorcode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="size" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="ImageUrl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ImageUrl1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.procGetProductDataAsJsonResult_20240616" Method="procGetProductDataAsJsonResult_20240616">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="procGetProductDataAsJsonResult_20240616Result">
+      <Column Name="JsonResult" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

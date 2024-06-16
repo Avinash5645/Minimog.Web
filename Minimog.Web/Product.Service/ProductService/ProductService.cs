@@ -16,9 +16,9 @@ namespace Product.Service.ProductService
             _productRepository = productRepository;
         }
 
-        public List<ProductEntity> GetProducts()
+        public List<ProductEntity> GetProducts(string search)
         {
-            var res = _productRepository.GetProducts();
+            var res = _productRepository.GetProducts(search);
             return res;
         }
         public ProductEntity GetProduct(Guid id)

@@ -5489,6 +5489,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\card_img.png" />
     <Content Include="Images\cat_01.jpg" />
     <Content Include="Images\cat_02.jpg" />
     <Content Include="Images\cat_03.jpg" />
@@ -6158,6 +6159,7 @@
     <Content Include="Views\Product\List.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Registration.cshtml" />
+    <Content Include="Views\Account\Payment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

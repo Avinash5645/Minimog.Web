@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SgMinimog" Class="MinimogDbDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.1.36,1433;Initial Catalog=SgMinimog;User ID=manish.gupta" SettingsObjectName="Product.Data.Properties.Settings" SettingsPropertyName="SgMinimogConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MANISH\MSSQLSERVER2023;Initial Catalog=SgMinimog;Integrated Security=True;Encrypt=False" SettingsObjectName="Product.Data.Properties.Settings" SettingsPropertyName="SgMinimogConnectionString1" Provider="System.Data.SqlClient" />
   <Function Name="dbo.GetProductDataAsJsonResult" Method="GetProductDataAsJsonResult">
     <ElementType Name="GetProductDataAsJsonResultResult">
       <Column Name="JsonResult" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
@@ -14,11 +14,6 @@
   <Function Name="dbo.procGetProductByIdAsJson_20230806" Method="procGetProductByIdAsJson_20230806">
     <Parameter Name="ProductId" Parameter="productId" Type="System.Guid" DbType="UniqueIdentifier" />
     <ElementType Name="procGetProductByIdAsJson_20230806Result">
-      <Column Name="JsonResult" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.procGetProductDataAsJsonResult_20230806" Method="procGetProductDataAsJsonResult_20230806">
-    <ElementType Name="procGetProductDataAsJsonResult_20230806Result">
       <Column Name="JsonResult" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
@@ -37,6 +32,12 @@
     <ElementType Name="procSaveUserResult">
       <Column Name="IsValid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="Message" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.procGetProductDataAsJsonResult_20240616" Method="procGetProductDataAsJsonResult_20240616">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="procGetProductDataAsJsonResult_20240616Result">
+      <Column Name="JsonResult" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

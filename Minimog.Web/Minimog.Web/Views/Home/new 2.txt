@@ -1,0 +1,2 @@
+@stripe/react-stripe-js
+@paypal/react-paypal-js

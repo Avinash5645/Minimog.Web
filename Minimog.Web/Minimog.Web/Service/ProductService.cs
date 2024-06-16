@@ -15,9 +15,9 @@ namespace Minimog.Web.Service
             _productRepository = productRepository;
         }
 
-        public List<Product> GetProducts()
+        public List<Product> GetProducts(string search)
         {
-            var res=_productRepository.GetProducts();
+            var res=_productRepository.GetProducts(search);
             return res;
         }
         public Product GetProduct(Guid id)
@@ -25,5 +25,5 @@ namespace Minimog.Web.Service
             var res = _productRepository.GetProduct( id);
             return res;
         }
-    }
+	}
 }

@@ -1,0 +1,44 @@
+function validateForm() {
+    var userName = document.getElementById("UserName").value;
+    var email = document.getElementById("Email").value;
+    var mobileNumber = document.getElementById("MobileNumber").value;
+    var password = document.getElementById("Password").value;
+    var confirmPassword = document.getElementById("ConfirmPassword").value;
+    var selectOption = document.getElementById("SelectOption").value;
+    var gender = document.querySelector('input[name="gender"]:checked');
+    
+    // Validate other fields
+    if (userName.length == 0 || email.length == 0 || mobileNumber.length == 0 || 
+        password.length == 0 || confirmPassword.length == 0 || selectOption === "Select Option" ||
+        gender === null) {
+        // If any of the required fields is empty, show error messages and return false
+        document.getElementById('NameError').innerHTML = userName.length == 0 ? "Please Enter Your UserName" : "";
+        document.getElementById('EmailError').innerHTML = email.length == 0 ? "Please Enter Your E-Mail" : "";
+        document.getElementById('MobileError').innerHTML = mobileNumber.length == 0 ? "Please Enter Your Mobile Number" : "";
+        document.getElementById('PasswordError').innerHTML = password.length == 0 ? "Please Enter Your Password" : "";
+        document.getElementById('ConfirmError').innerHTML = confirmPassword.length == 0 ? "Please Enter Your Confirm Password" : "";
+        document.getElementById('SelectOptionError').innerHTML = selectOption === "Select Option" ? "Please Select a City" : "";
+        document.getElementById('GenderError').innerHTML = gender === null ? "Please Select Your Gender" : "";
+        
+        // Disable the "Remember Me" checkbox if any validation fails
+        document.getElementById('Newsletter').disabled = true;
+        
+        return false;
+    } else {
+        // If all required fields are filled, remove error messages
+        document.getElementById('NameError').innerHTML = "";
+        document.getElementById('EmailError').innerHTML = "";
+        document.getElementById('MobileError').innerHTML = "";
+        document.getElementById('PasswordError').innerHTML = "";
+        document.getElementById('ConfirmError').innerHTML = "";
+        document.getElementById('SelectOptionError').innerHTML = "";
+        document.getElementById('GenderError').innerHTML = "";
+        
+        // Enable the "Remember Me" checkbox if all validations pass
+        document.getElementById('Newsletter').disabled = false;
+    }
+
+    // All validations passed
+    return true;
+}
+

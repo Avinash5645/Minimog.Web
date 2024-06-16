@@ -33,7 +33,7 @@ namespace Product.Data.DBML
     #endregion
 		
 		public MinimogDbDataDataContext() : 
-				base(global::Product.Data.Properties.Settings.Default.SgMinimogConnectionString, mappingSource)
+				base(global::Product.Data.Properties.Settings.Default.SgMinimogConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -83,13 +83,6 @@ namespace Product.Data.DBML
 			return ((ISingleResult<procGetProductByIdAsJson_20230806Result>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.procGetProductDataAsJsonResult_20230806")]
-		public ISingleResult<procGetProductDataAsJsonResult_20230806Result> procGetProductDataAsJsonResult_20230806()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<procGetProductDataAsJsonResult_20230806Result>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.procLoginCheck")]
 		public ISingleResult<procLoginCheckResult> procLoginCheck([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="NVarChar(60)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(10)")] string password)
 		{
@@ -102,6 +95,13 @@ namespace Product.Data.DBML
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, email, password);
 			return ((ISingleResult<procSaveUserResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.procGetProductDataAsJsonResult_20240616")]
+		public ISingleResult<procGetProductDataAsJsonResult_20240616Result> procGetProductDataAsJsonResult_20240616([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string name)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name);
+			return ((ISingleResult<procGetProductDataAsJsonResult_20240616Result>)(result.ReturnValue));
 		}
 	}
 	
@@ -163,32 +163,6 @@ namespace Product.Data.DBML
 		private string _JsonResult;
 		
 		public procGetProductByIdAsJson_20230806Result()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JsonResult", DbType="NVarChar(MAX)")]
-		public string JsonResult
-		{
-			get
-			{
-				return this._JsonResult;
-			}
-			set
-			{
-				if ((this._JsonResult != value))
-				{
-					this._JsonResult = value;
-				}
-			}
-		}
-	}
-	
-	public partial class procGetProductDataAsJsonResult_20230806Result
-	{
-		
-		private string _JsonResult;
-		
-		public procGetProductDataAsJsonResult_20230806Result()
 		{
 		}
 		
@@ -292,6 +266,32 @@ namespace Product.Data.DBML
 				if ((this._Message != value))
 				{
 					this._Message = value;
+				}
+			}
+		}
+	}
+	
+	public partial class procGetProductDataAsJsonResult_20240616Result
+	{
+		
+		private string _JsonResult;
+		
+		public procGetProductDataAsJsonResult_20240616Result()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JsonResult", DbType="NVarChar(MAX)")]
+		public string JsonResult
+		{
+			get
+			{
+				return this._JsonResult;
+			}
+			set
+			{
+				if ((this._JsonResult != value))
+				{
+					this._JsonResult = value;
 				}
 			}
 		}

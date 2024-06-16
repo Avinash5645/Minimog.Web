@@ -1,0 +1,3 @@
+const Product_name = d.replace(/\s+/g, "-");
+Main Site Link =https://shopo.quomodothemes.website/
+React Video Link= https://youtube.com/playlist?list=PLjVLYmrlmjGdnIQKgnTeR1T9-1ltJEaJh&si=PebVUPRmwf3gdwbP

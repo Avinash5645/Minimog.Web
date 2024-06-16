@@ -20,18 +20,18 @@ namespace Product.Data.ProductRepository
 
         }
         /// <summary>
-        /// get all products
+        /// get all productss
         /// </summary>
         /// <returns></returns>
-        public List<ProductEntity> GetProducts()
+        public List<ProductEntity> GetProducts(string search = null)
         {
             var products = new List<ProductEntity>();
-            var resproducts = _minimogDbDataDataContext.procGetProductDataAsJsonResult_20230806();
+            var resproducts = _minimogDbDataDataContext.procGetProductDataAsJsonResult_20240616(search);
             var jsonResult = resproducts.FirstOrDefault();
             products = JsonConvert.DeserializeObject<List<ProductEntity>>(jsonResult?.JsonResult);
             return products;
         }
-        /// <summary>
+        /// <summary>s
         /// get productdetail
         /// </summary>
         /// <param name="id"></param>
