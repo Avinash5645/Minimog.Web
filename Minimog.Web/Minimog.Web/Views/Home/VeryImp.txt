@@ -1,0 +1,36 @@
+As a dedicated Full Stack Developer with expertise in a wide array of technologies, I bring a wealth of knowledge and enthusiasm to the table. 
+I have a strong foundation in both front-end and back-end development, having mastered languages and frameworks such as HTML, CSS, JavaScript, 
+TypeScript, React.js, AngularJS, and Next.js. My backend expertise includes C#, ASP.NET, SQL, and MongoDB, which allow me to build robust and 
+scalable applications.
+
+Technical Skills:
+Front-End: HTML, CSS, JavaScript, TypeScript, React.js, AngularJS, Bootstrap CSS Framework, jQuery, Next.js
+Back-End: C, C++, Core Java, C#, ASP.NET, ASP.NET Framework, SQL, MongoDB, MERN stack
+Development Tools: GitHub, GitHub Desktop, Sourcetree, Visual Studio 2022, Visual Studio Code
+Other Skills: Excel, Development
+
+Render for YourHR: https://yourhr-y4cm.onrender.com
+
+Professional Experience:
+
+As a fresher, I have been diligently working from home, developing various projects that showcase my skills and commitment to continuous learning. 
+My experience includes designing and implementing dynamic user interfaces, managing databases, and ensuring seamless integration between front-end 
+and back-end systems.
+
+Education:
+I hold a Bachelor's degree in Computer Applications (BCA) with a strong focus on Computer Applications from a reputable institution. 
+My academic background provided me with a solid understanding of software development principles and practices.
+
+Achievements:
+Successfully completed multiple full-stack projects from concept to deployment while working independently from home.
+Collaborated with online communities and peers to enhance my projects and gain valuable feedback.
+Regularly participated in code reviews and engaged in continuous learning to stay updated with industry trends.
+Personal Interests:
+Outside of my professional life, I am passionate about cricket. I enjoy playing and watching cricket, participating in local tournaments, 
+and following international cricket events. This passion for sports translates into a strong team spirit and leadership qualities in my professional 
+endeavors.
+
+I am always eager to learn new technologies and stay updated with industry trends. I believe in continuous improvement and am committed to 
+delivering exceptional solutions that meet and exceed client expectations.
+
+Feel free to connect with me to discuss potential opportunities, collaborations, or to share insights on the latest advancements in technology.

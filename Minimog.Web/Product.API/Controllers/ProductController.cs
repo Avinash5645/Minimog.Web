@@ -21,7 +21,7 @@ namespace Product.API.Controllers
 
         [HttpGet]
         [Route("Product/GetAllProduct")]
-        public IHttpActionResult GetAllProduct(string search)
+        public IHttpActionResult GetAllProduct(string search = null)
         {
             var res = _productService.GetProducts(search);
             var productData = Mapper.Map<IEnumerable<ProductEntity>, IEnumerable<ProductModel>>(res);

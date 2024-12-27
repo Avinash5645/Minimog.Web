@@ -4,7 +4,7 @@
 
 <div class="container py-5">
 
-    <form action="">
+    <form id="paymentForm" action="">
 
         <div class="row mb-4">
 
@@ -55,7 +55,7 @@
                     <input type="text" class="form-control" id="expMonth" placeholder="Enter Expiry Month ">
                 </div>
 
-                <div class="row g-3">
+                <div class="row g-3 mb-3">
                     <div class="col-md-6">
                         <label for="expYear" class="form-label">Exp Year:</label>
                         <input type="number" class="form-control" id="expYear" placeholder="Enter Expiry Year">
@@ -64,6 +64,10 @@
                         <label for="cvv" class="form-label">CVV:</label>
                         <input type="text" class="form-control" id="cvv" placeholder="Enter CVV">
                     </div>
+                </div>
+                <div class="mb-3">
+                    <label for="amtPay" class="form-label">Total Amount To Pay</label>
+                    <input type="number" class="form-control" id="amtPay" ng-model="Total" disabled>
                 </div>
                 <div class="p-5">
                     <label class="form-label">Cards Accepted:</label>
@@ -75,9 +79,30 @@
         <div class="d-grid">
             <input type="submit" value="Proceed to Payment" class="btn btn-dark btn-lg">
         </div>
-
     </form>
-
 </div>
 
+<script>
+    document.getElementById('paymentForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the form from submitting the traditional way
 
+        // Check if any field is empty
+        const fields = document.querySelectorAll('#paymentForm input');
+        let allFieldsFilled = true;
+        fields.forEach(function (field) {
+            if (field.value.trim() === '') {
+                allFieldsFilled = false;
+                return;
+            }
+        });
+
+        // Display message if all fields are filled
+        if (allFieldsFilled) {
+            let x = Math.floor(Math.random() * 1000000); // Generates a random number between 0 and 999999
+            alert('Payment Successful. Order no: ' + x);
+            // Optionally, you can submit the form here using AJAX or other methods if needed
+        } else {
+            alert('Please fill out all fields before proceeding to payment.');
+        }
+    });
+</script>

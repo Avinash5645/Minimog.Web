@@ -12,7 +12,7 @@
         console.log("detail");
         // Load cart items from localStorage
         $scope.cartItems = JSON.parse($window.localStorage.getItem('cart')) || [];
-
+        
         // Save cart items to localStorage
         function saveToLocalStorage(cartItems) {
             $window.localStorage.setItem('cart', JSON.stringify(cartItems));
@@ -53,6 +53,18 @@
 
         $scope.cartItems = JSON.parse($window.localStorage.getItem('cart')) || [];
         $scope.cartCount = $scope.cartItems.length;
+
+     
+        // // Function to calculate the total price
+        $scope.getTotalPrice = function () {
+            let total = 0;
+            for (let product of $scope.cartItems) {
+                total += product.price * product.quantity;
+            }
+            return total;
+        };
+        $scope.Total = $scope.getTotalPrice();
+     
         $scope.callAddToCArt = function () {
             // Load cart items from localStorage
             $scope.cartItems = JSON.parse($window.localStorage.getItem('cart')) || [];

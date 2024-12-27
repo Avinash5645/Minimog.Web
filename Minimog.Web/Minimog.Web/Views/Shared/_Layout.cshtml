@@ -126,7 +126,7 @@
                 </div>*@
 
             <div class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle"
+                <a class="btn btn-dark dropdown-toggle"
                    href="#"
                    role="button" id="dropdownMenuLink"
                    data-bs-toggle="dropdown"
@@ -213,7 +213,7 @@
                         <h6>{{item.title}}</h6>
                         <p>${{item.price}}</p>
                         <div class="input-group">
-                            <button class="btn btn-outline-secondary" type="button" id="button-decrease" ng-click="decrementItem(item)" >-</button>
+                            <button class="btn btn-outline-secondary" type="button" id="button-decrease" ng-click="decrementItem(item)">-</button>
                             <input type="text" class="form-control text-center" aria-label="Quantity" ng-model="item.quantity" ng-blur="enterQuantityItem(item)" ng-keypress="($event.which === 13) && enterQuantityItem(item)">
                             <button class="btn btn-outline-secondary" type="button" id="button-increase" ng-click="incrementItem(item)">+</button>
                         </div>
@@ -221,6 +221,11 @@
                             <i class="fa-solid fa-trash"></i> Remove
                         </button>
                     </div>
+                </div>
+                <div class="d-grid gap-2 mt-4">
+                    <button type="button" class="btn btn-primary btn-lg" onclick="redirectToPayment()" ng-click="checkout()">
+                        <i class="fa-solid fa-credit-card"></i> Check Out (Total: ${{ Total }})
+                    </button>
                 </div>
             </div>
         </div>
@@ -335,6 +340,10 @@
             });
         });
 
+        //redirect from checkout to payment
+        function redirectToPayment() {
+            window.location.href = '/Account/payment';
+        }
     </script>
     @*<script src="~/Assets/bootstrap-5.3.0/js/vendor.bundle.js"></script>
         <script src="~/Assets/bootstrap-5.3.0/js/theme.bundle.js"></script>*@
